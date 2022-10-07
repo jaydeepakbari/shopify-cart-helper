@@ -19,23 +19,21 @@ This Javascript library that makes it easy to add dynamic cart features to Shopi
 
 ## Usage/Examples
 
-| Function Name | Usage |
-| :---         |     :---      |
-| cart.getCart | Get cart and all of the items |
-| cart.addItem | Add items to the cart |
-| cart.updateItem | Update an item in the cart |
-| cart.updateItemById | Update an item in the cart by Id |
-| cart.updateItemByLine | Update an item in the cart By Line |
-| cart.removeItem | Remove items from the cart |
-| cart.removeItemById | Remove items from the cart by item id |
-| cart.removeItemByLine | Remove items from the cart by line |
-| cart.setNote | Add cart notes |
-| cart.setCartAttributes | Add cart attributes |
-| cart.addToCartWithFile | Uploading a file and saving it to line item properties |
-| cart.appendFileToLineById | You can add files and images to existing line |
-| cart.appendFileToLineByIndex | You can add files and images to existing line items using index |
-| cart.clearCart | Clear the cart |
-| cart.updateQuantities | Updating the quantities or properties of multiple items at once |
-| cart.getShippingRates | Get shipping rates |
-| cart.cartRequiresShipping |  |
-| cart.getProduct | Check cart does not require shipping |
+| Function Name | Usage | Example |
+| :---         |     :---      |     :---      |
+| cart.getCart | Get cart and all of the items | await getCart() |
+| cart.addItem | Add items to the cart | await addItem(123456, 1) |
+| cart.updateItemById | Update an item in the cart by Id | await updateItemById(123456, 2, { updated: "true" }) |
+| cart.updateItemByLine | Update an item in the cart By Line | await updateItemByLine(2, 2, { name: "Jaydeep" }) |
+| cart.removeItemById | Remove items from the cart by item id | await removeItemById(1234) |
+| cart.removeItemByLine | Remove items from the cart by line | await removeItemById(1234) |
+| cart.setNote | Add cart notes | await setNote("Cart Note Text") |
+| cart.setCartAttributes | Add cart attributes | await setCartAttributes({ LocalTime: new Date()) |
+| cart.addToCartWithFile | Uploading a file and saving it to line item properties | const input = document.querySelector("#file-input"); const newLineItem = await addToCartWithFile(123456, input.files[0]); |
+| cart.appendFileToLineById | You can add files and images to existing line | |
+| cart.appendFileToLineByIndex | You can add files and images to existing line items using index | |
+| cart.clearCart | Clear the cart | await clearCart() |
+| cart.updateQuantities | Updating the quantities or properties of multiple items at once |  await updateQuantities([{id: 123, quantity: 2}, { id: 234, quantity: 4 }]) |
+| cart.getShippingRates | Get shipping rates | await getShippingRates("12345", "Minnesota", "United States") | 
+| cart.cartRequiresShipping | Check cart does not require shipping | await.cartRequiresShipping() |
+| cart.getProduct | get the product JSON data by handle | await getProduct("my-fabulous-product") |
